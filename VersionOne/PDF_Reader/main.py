@@ -7,7 +7,7 @@ import json
 def main():
     try:
         result = {"IsSuccess":False, "json_result": None, "Message":"Json creation failed!"}
-        pdfreader = PDFReader()
+        pdfreader = PDFReader(Constant.INPUT_PDF_DIR)
         basic_and_billing_details = pdfreader.extract_basic_details_pdf()
         if basic_and_billing_details['IsSuccess']:
             output_path = Constant.SAVE_JSON

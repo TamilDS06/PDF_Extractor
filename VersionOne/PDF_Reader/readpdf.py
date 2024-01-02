@@ -10,10 +10,10 @@ import tabula
 class PDFReader:
 
 
-    def __init__(self):
+    def __init__(self, pdf_dir):
         try:
             result = {"IsSuccess":False, "List_pdf":None, "Message":"Constructor method failed!"}
-            self.pdf_list = list_pdf(Constant.INPUT_PDF_DIR)
+            self.pdf_list = list_pdf(pdf_dir)
             if len(self.pdf_list['list_pdf']) == 0:
                 print("No pdf files found in specified location!")
                 sys.exit()
