@@ -11,7 +11,7 @@ def main():
         basic_and_billing_details = pdfreader.extract_basic_details_pdf()
         if basic_and_billing_details['IsSuccess']:
             output_path = Constant.SAVE_JSON
-            output_file = f"pdf_details_{datetime.now().strftime("%Y%m%d%H%M%S")}.json"
+            output_file = f'pdf_details_{datetime.now().strftime("%Y%m%d%H%M%S")}.json'
             if not os.path.exists(output_path):
                 os.mkdir(output_path)
             with open(output_path+"\\"+output_file, 'w') as file:
